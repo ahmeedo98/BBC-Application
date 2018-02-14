@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="content-language" content="en" />
+<meta http-equiv="Content-Type" content="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<link href="css/main.css" media="all" rel="stylesheet" type="text/css" />
+<div id="top">
+<h3> Ahmed Abdul Rahman </h3>
+<h1><img src="Pictures/bbc_blocks.jpg" alt="BBC Application"></h1>
+</head>
+</div>
+<body>
+<script src="jquery-2.1.1.js"></script>
+<div id="table">
+<table class="center" id="myTable" style="border-collapse:collapse">
+  <tr>
+    <th>Date</th>
+    <th>BBC4</th> 
+    <th>BBC News 24</th>
+	<th>BBC One</th>
+    <th>BBC Three</th>
+    <th>BBC Two</th>
+    <th>CBBC</th>
+	<th>Cbeebies</th>
+  </tr>
+<tbody id="myBody">
+</tbody>
+</table>
+</div>
+<script>
+$.getJSON('Data/data.json', function (data) {
+
+	var myJSON=data;
+
+	var month="what";
+	function checkDate(date){ 
+		switch (date) {
+		case '2009-01':
+			month = "January 2009";
+			break;
+		case '2009-02':
+			month = "February 2009";
+			break;
+		case '2009-03':
+			month = "March 2009";
+			break;
+		case '2009-04':
+			month = "April 2009";
+			break;
+		case '2009-05':
+			month = "May 2009";
+			break;
+		case '2009-06':
+			month = "June 2009";
+			break;
+		case '2009-07':
+			month = "July 2009";
+			break;
+		case '2009-08':
+			month = "August 2009";
+			break;
+		case '2009-09':
+			month = "September 2009";
+			break;
+		case '2009-10':
+			month = "October 2009";
+			break;
+		case '2009-11':
+			month = "November 2009";	
+			break;
+		case '2009-12':
+			month = "December 2009";	
+			break;			
+		
+		}
+	return month;
+	}
+
+$.each(data, function (key1, data1){ 
+	$('#myBody').append('<tr>');
+	$('#myBody').append('<td>'+ checkDate(key1) + '</td>');
+	
+		$.each(data1, function (key2, data2){
+		$('#myBody').append('<td>'+ data2 + '</td>');
+		
+		})
+	$('#myBody').append('</tr>');
+	
+})
+
+})
+</script>
+
+
+</body>
+</html>
