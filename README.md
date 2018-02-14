@@ -5,5 +5,5 @@ Ahmed Abdul Rahman
 
 email: 1612543@brunel.ac.uk ||
 number: 07950592130 ||
-My BBC application, use localhost. ||
+My BBC application, use LOCALHOST. ||
 Any feedback for the website would be highly appreciated ||
